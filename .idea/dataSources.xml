@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails BloggerApp: development" uuid="ad49ac53-308e-426d-b032-0534fabd3198">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/blogger</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails BloggerApp: production" uuid="a3278a1b-7d06-4e3a-9854-7cf22397e016">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/BloggerApp_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails BloggerApp: test" uuid="b587c198-c150-4c44-86cc-f977d7016f3a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/BloggerApp_test</jdbc-url>
+    </data-source>
+  </component>
+</project>
