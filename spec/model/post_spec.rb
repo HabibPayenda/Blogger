@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe Post, type: :model do
-  subject { Post.new(Title: 'First Post', comments_counter: 2, likes_counter: 2) }
+  subject { Post.new(Title: 'First Post', comment_counter: 2, like_counter: 2) }
 
   before { subject.save }
 
