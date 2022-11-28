@@ -3,17 +3,6 @@ RSpec.describe Post, type: :model do
   subject { Post.new(Title: 'First Post', comment_counter: 2, like_counter: 2) }
 
   before { subject.save }
-
-  it 'title should be present' do
-    subject['Title'] = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'comments_counter should be present' do
-    subject.comment_counter = nil
-    expect(subject).to_not be_valid
-  end
-
   it 'likes_counter should be present' do
     subject.like_counter = nil
     expect(subject).to_not be_valid
