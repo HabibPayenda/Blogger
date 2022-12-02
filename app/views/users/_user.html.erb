@@ -1,0 +1,11 @@
+<%= link_to user_path(user) do %>
+  <div class="userCard">
+    <div class="userCardLeft">
+      <%= image_tag user.Photo, alt: "#{user.Name}-avatar", class: 'profile-image' %>
+    </div>
+    <div class="userCardRight">
+      <h3 class="username"><%= user.Name %></h3>
+      <span class="post-counter">Number of posts: <%= user.post_counter %></span>
+    </div>
+  </div>
+<% end %>

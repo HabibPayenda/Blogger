@@ -1,1 +1,7 @@
-<h1> Hello user with id: <%= @id %> <h1>
+<% content_for :title, "#{@user.Name}'s - Blog" %>
+<section class="user-details-section">
+  <%= render "user", user: @user %>
+  <div class="bio">
+    <h3>Bio<h3>
+    <p class='bioDesc'><%= @user.Bio %></p>
+  </div>
