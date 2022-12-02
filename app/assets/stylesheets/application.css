@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ a {
+    text-decoration: none;
+    color: black;
+ }
+
 .usersContainer {
     display:  flex;
     flex-direction: column;
@@ -41,9 +47,40 @@
     padding: 0 20px;
 }
 
+.userDetailsSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .bio {
     display: flex;
     flex-direction: column;
     border: solid 1px black;
     padding: 20px;
+}
+
+.recentPosts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.singlePost {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+.seeAllPosts {
+    margin: 10px;
+    align-self: center;
+}
+
+.counterSection {
+    align-self: flex-end;
 }
