@@ -1,3 +1,27 @@
-<h1>
-showing all posts for user with id: <%= @user_id %>
-</h1>
+<section class="post-section">
+<% content_for :title, "#{@user.Name}'s Posts" %>
+<%= render "users/user", user: @user %>
+<% @user.posts.each do | post | %>
+  <%= link_to user_post_path(@user, post) do %>
+    <%= render "post", post: post %>
+    
+    <div>
+      <h3>
+      <span>Comments</span>
+      <span>for Post: </span>
+      <span><%="#{post.Title}"%> </span>
+      </h3>
+      <div class='postComments'>
+      <% post.return_recent_comments.each do |comment| %>
+        <div>
+          <p>
+            <span><strong><%= comment.AuthorId %>:</strong></span>
+            <span><%= comment.text %></span>
+          </p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</section>

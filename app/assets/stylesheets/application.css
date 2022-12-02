@@ -84,3 +84,9 @@
 .counterSection {
     align-self: flex-end;
 }
+
+.postComments {
+    border: solid 1px black;
+    padding: 10px;
+    margin: 10px;
+}

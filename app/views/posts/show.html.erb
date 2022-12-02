@@ -1,4 +1,12 @@
-<h1>
-showing post with id <%= @post_id%>
-for user with id <%= @user_id %>
-</h1>
+<% content_for :title, "#{@user.Name} | #{@post.Title}" %>
+<%= render "user_post", post: @post %>
+<div>
+  <% @post.comments.each do |comment| %>
+    <div>
+      <p>
+        <span><strong><%= comment.AuthorId %>:</strong></span>
+        <span><%= comment.text %></span>
+      </p>
+    </div>
+  <% end %>
+<div>
