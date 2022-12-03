@@ -1,1 +1,19 @@
-<h1> Hello user with id: <%= @id %> <h1>
+<% content_for :title, "#{@user.Name}'s - Blog" %>
+<section class="userDetailsSection">
+  <%= render "user", user: @user %>
+  <div class="bio">
+    <h3>Bio<h3>
+    <p class='bioDesc'><%= @user.Bio %></p>
+  </div>
+  <br>
+  <div class='recentPosts'>
+  <% @user.return_recent_posts.each do |post| %>
+      <%= link_to user_post_path(@user, post) do %>
+      <%= render "posts/post", post: post %>
+    <% end %>
+  <% end %>
+  </div>
+  <%= link_to user_posts_path(@user) do %>
+    <button type="button" class="seeAllPosts">See all posts</button>
+  <% end %>
+</section>
