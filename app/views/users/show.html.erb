@@ -16,4 +16,7 @@
   <%= link_to user_posts_path(@user) do %>
     <button type="button" class="seeAllPosts">See all posts</button>
   <% end %>
+   <%= link_to posts_new_path(@user) do %>
+    <button type="button" class="seeAllPosts">Create Post</button>
+  <% end %>
 </section>

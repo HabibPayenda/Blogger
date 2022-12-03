@@ -90,3 +90,10 @@ a {
   padding: 10px;
   margin: 10px;
 }
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+}
