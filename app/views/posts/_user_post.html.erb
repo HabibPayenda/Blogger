@@ -7,4 +7,7 @@
     <aside>
   </div>
   <p><%= post.Text %></p>
+  <%= form_with model: @like, url: like_path, method: :post do |f| %>
+    <%= f.submit "Like" %>
+  <% end %>
 </div>
