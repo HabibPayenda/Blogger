@@ -35,6 +35,24 @@ RSpec.describe 'PostShow', type: :feature do
       expect(page).to have_content(@post.Text)
     end
 
+    it 'display the comment counter' do
+      expect(page).to have_content('Comments: 4')
+    end
+
+    it 'displays the user name of commentor' do
+      expect(page).to have_content(@user.Name)
+      expect(page).to have_content(@user2.Name)
+      expect(page).to have_content(@user3.Name)
+      expect(page).to have_content(@user4.Name)
+    end
+
+    it 'displays the post comments' do
+      expect(page).to have_content(@comment3.text)
+      expect(page).to have_content(@comment4.text)
+      expect(page).to have_content(@comment2.text)
+      expect(page).to have_content(@comment1.text)
+    end
+
     it 'displays the post likes counter' do
       expect(page).to have_content(@post.like_counter)
     end

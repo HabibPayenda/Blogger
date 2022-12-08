@@ -16,15 +16,15 @@ RSpec.describe 'UsersShow', type: :feature do
 
       visit root_path
 
-      @post = Post.create!(Title: 'This is a post title', Text: ' This is a Text', comment_counter: 3,
+      @post = Post.create!(Title: 'This is a post title1', Text: ' This is a Text', comment_counter: 3,
                            like_counter: 3, AuthorId: @user1.id)
-      @post2 = Post.create!(Title: 'This is a post title', Text: ' This is a Text2', comment_counter: 3,
+      @post2 = Post.create!(Title: 'This is a post title2', Text: ' This is a Text2', comment_counter: 3,
                             like_counter: 3, AuthorId: @user1.id)
-      @post3 = Post.create!(Title: 'This is a post title', Text: ' This is a Text2', comment_counter: 3,
+      @post3 = Post.create!(Title: 'This is a post title3', Text: ' This is a Text2', comment_counter: 3,
                             like_counter: 3, AuthorId: @user1.id)
-      @post4 = Post.create!(Title: 'This is a post title', Text: ' This is a Text4', comment_counter: 3,
+      @post4 = Post.create!(Title: 'This is a post title4', Text: ' This is a Text4', comment_counter: 3,
                             like_counter: 3, AuthorId: @user1.id)
-      @post5 = Post.create!(Title: 'This is a post title', Text: ' This is a Text5', comment_counter: 3,
+      @post5 = Post.create!(Title: 'This is a post title5', Text: ' This is a Text5', comment_counter: 3,
                             like_counter: 3, AuthorId: @user1.id)
 
       visit user_path(@user1.id)
@@ -58,12 +58,12 @@ RSpec.describe 'UsersShow', type: :feature do
     end
 
     it 'click a user post and redirects to post show page' do
-      click_link 'See all posts'
-      expect(page).to have_current_path user_posts_path(@user1)
+      click_link @post4.Title
+      expect(page).to have_current_path user_post_path(@user1, @post4)
     end
 
     it 'click see all posts and redirects to user posts index page' do
-      click_link('See all posts')
+      click_link 'See all posts'
       expect(page).to have_current_path user_posts_path(@user1)
     end
   end

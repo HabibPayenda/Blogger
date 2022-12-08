@@ -29,13 +29,18 @@ RSpec.describe 'PostIndex', type: :feature do
     it 'displays the user posts counter' do
       expect(page).to have_content(@user.post_counter)
     end
+    it 'displays the post recent comments' do
+      expect(page).to have_content(@comment1.text)
+      expect(page).to have_content(@comment2.text)
+      expect(page).to have_content(@comment3.text)
+    end
     it 'displays the post title' do
       expect(page).to have_content(@post.Title)
     end
-    it 'displays the post text' do
-      expect(page).to have_content(@post.Text)
-    end
     it 'displays the post comments counter' do
+      expect(page).to have_content(@post.comment_counter)
+    end
+    it 'displays the post comments' do
       expect(page).to have_content(@post.comment_counter)
     end
     it 'displays the post likes counter' do
@@ -43,6 +48,10 @@ RSpec.describe 'PostIndex', type: :feature do
     end
     it 'displays the post author name' do
       expect(page).to have_content(@post.user.Name)
+    end
+    it 'redirects to posts show page' do
+      click_link @post4.Title
+      expect(page).to have_current_path user_post_path(@user, @post4)
     end
   end
 end
