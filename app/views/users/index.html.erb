@@ -1,6 +1,16 @@
 <% content_for :title, "Blog App" %>
 <section class="usersContainer">
+<% if user_signed_in? %>
+<%= button_to(
+        "Log Out",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
+
   <% @users.each do |user| %>
     <%= render "user", user: user %>
+  <% end %>
+  <% else %>
+  <a href='users/sign_in'> Sign In </a>
   <% end %>
 </section>
