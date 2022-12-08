@@ -58,6 +58,11 @@ development:
 test:
   <<: *default
   database: blogger_test
+  username: habib_payenda
+  password: iwdmb
+  host: localhost
+
+
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
